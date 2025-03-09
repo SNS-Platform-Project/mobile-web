@@ -1,54 +1,45 @@
-# React + TypeScript + Vite
+# 🌐 mobile-web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SNS를 기반한 모바일 웹입니다. 🚀
 
-Currently, two official plugins are available:
+## 🛠️ 기술 스택
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛ React (Vite) – 빠르고 최적화된 개발 환경
+- 🎯 Zustand – 효율적인 상태 관리
+- 🛠 TypeScript – 안정적인 개발을 위한 정적 타입 적용
+- 🔗 Axios – API 요청 및 데이터 핸들링
+- 🌍 React Router – 페이지 이동 및 라우팅
+- 🎨 SASS/SCSS – 스타일링
+- 🎨 React Icons – 다양한 아이콘 제공
+- 🔔 React Simple Toasts – 사용자 알림 UI
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📚 기능
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+✅ 실시간 채팅 – 유저 간 메시지 전송  
+✅ SNS 기능 – 게시글 작성, 좋아요, 댓글  
+✅ 미디어 공유 – 이미지 및 영상 업로드  
+✅ 알림 시스템 – 새 메시지 및 활동 알림
+
+---
+
+## 🔧 설치 방법
+
+```sh
+# 프로젝트 클론
+git clone https://github.com/SNS-Platform-Project/mobile-web.git
+
+
+# 프로젝트 폴더 이동
+cd mobile-web
+
+# 패키지 설치
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 개발 서버 실행
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run dev
 ```
