@@ -23,4 +23,13 @@ export default defineConfig({
       "@styles": fileURLToPath(new URL("./src/styles", import.meta.url)),
     },
   },
+
+  // scss 전역사용
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@assets/styles/main";`,
+      },
+    },
+  },
 });

@@ -1,0 +1,22 @@
+@use "./color.scss";
+@forward "./color.scss";
+
+// 모바일 기본 스타일
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+// 반응형 적용
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
