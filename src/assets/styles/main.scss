@@ -2,6 +2,7 @@
 @use "./font.scss";
 @forward "./color.scss";
 @forward "./font.scss";
+@use "./mixin.scss";
 
 * {
   padding: 0;
@@ -12,20 +13,16 @@
 
   font-family: "Public Sans", sans-serif;
   font-weight: 00;
-}
 
-// 태블릿 (768px 이상)
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
-    max-width: 720px;
+  @include mixin.mobile {
+    background: color.$color-lightBlue-000;
   }
-}
 
-// 데스크탑 (1024px 이상)
-@media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-    max-width: 1200px;
+  @include mixin.tablet {
+    background: color.$color-lightBlue-050;
+  }
+
+  @include mixin.desktop {
+    background: color.$color-lightBlue-100;
   }
 }
