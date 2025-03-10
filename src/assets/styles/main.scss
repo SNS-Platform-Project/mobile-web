@@ -1,22 +1,31 @@
 @use "./color.scss";
+@use "./font.scss";
 @forward "./color.scss";
+@forward "./font.scss";
 
-// 모바일 기본 스타일
-.container {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+  background-color: color.$color-lightBlue-000;
+
+  font-family: "Public Sans", sans-serif;
+  font-weight: 00;
 }
 
-// 반응형 적용
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
+// 태블릿 (768px 이상)
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    max-width: 720px;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
+// 데스크탑 (1024px 이상)
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+    max-width: 1200px;
   }
 }

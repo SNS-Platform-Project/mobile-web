@@ -1,10 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// 페이지 컴포넌트
+import MainPage from "@/pages/index";
 
 function App() {
-
-
   return (
-    <div>안녕하세요</div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<MainPage />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
