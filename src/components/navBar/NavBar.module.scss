@@ -1,29 +1,31 @@
 @use "@assets/styles/mixin.scss";
-@use "@assets/styles/color.scss";
 
 .navbar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px; // 네비게이션 바 높이
-  background-color: color.$color-lightBlue-050;
+  height: 60px; // 기본(모바일) 네비게이션 바 높이
+  background-color: main.$color-white-000;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #ddd;
+  border-top: 0.5px solid #ddd;
   z-index: 1000; // 다른 요소 위에 오도록 설정
 
-  @include mixin.mobile {
-    height: 50px;
-    background: color.$color-lightBlue-000;
+  @include mixin.tablet {
+    height: 70px;
+  }
+
+  @include mixin.desktop {
+    height: 80px; /* 데스크탑에서 더 크게 */
   }
 }
 
 .navItem {
   text-decoration: none;
-  color: #333;
-  font-size: 14px;
+  color: main.$color-white-500;
+  font-size: 12px;
   font-weight: 500;
   display: flex;
   flex-direction: column;
@@ -32,12 +34,37 @@
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: #007bff;
+    color: main.$color-white-500;
+  }
+
+  @include mixin.tablet {
+    font-size: 14px;
+  }
+
+  @include mixin.desktop {
+    font-size: 16px;
+  }
+
+  /* 아이콘 크기 조정 */
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #888;
+
+    @include mixin.tablet {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include mixin.desktop {
+      width: 28px;
+      height: 28px;
+    }
   }
 }
 
 .active {
-  color: #007bff;
+  color: main.$color-black-900;
   font-weight: bold;
-  border-bottom: 2px solid #007bff;
+  transform: scale(1.1); /* 선택된 아이콘 살짝 확대 */
 }

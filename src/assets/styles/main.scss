@@ -9,20 +9,20 @@
   margin: 0;
 
   box-sizing: border-box;
-  background-color: color.$color-lightBlue-000;
+  background-color: color.$color-white-000;
 
   font-family: "Public Sans", sans-serif;
   font-weight: 00;
 
   @include mixin.mobile {
-    background: color.$color-lightBlue-000;
+    background: color.$color-white-000;
   }
 
   @include mixin.tablet {
-    background: color.$color-lightBlue-050;
+    background: color.$color-white-000;
   }
 
   @include mixin.desktop {
-    background: color.$color-lightBlue-100;
+    background: color.$color-white-000;
   }
 }
