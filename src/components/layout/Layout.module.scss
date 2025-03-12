@@ -1,0 +1,16 @@
+@use "@assets/styles/mixin.scss";
+@use "@assets/styles/color.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: color.$color-lightBlue-000;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
