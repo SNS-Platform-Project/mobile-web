@@ -1,9 +1,11 @@
+import Header from "@/components/header/Header";
+
 import styles from "./home.module.scss";
 
 function index() {
   return (
     <div>
-      <h1>홈페이지 </h1>
+      <Header type="home" />
     </div>
   );
 }
