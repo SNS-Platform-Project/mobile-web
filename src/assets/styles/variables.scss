@@ -1,0 +1,21 @@
+// 기본 높이 설정 (모바일 기준)
+$HEADER-HEIGHT: 56px; // 상단 헤더 높이 (네비게이션 바)
+$FOOTER-HEIGHT: 50px; // 하단 탭 바 높이
+$NAVIGATION-HEIGHT: 50px; // 상단 탭바 높이 (ex: 추천 | 팔로잉)
+$TAB-BAR-HEIGHT: 48px; // 프로필 탭바 높이 (ex: 스레드 | 답글 | 미디어)
+
+// 기본 여백 (패딩, 마진)
+$MOBILE-PADDING: 16px; // 전체 페이지 기본 좌우 패딩
+$GAP-SMALL: 8px; // 작은 간격 (버튼 사이 등)
+$GAP-MEDIUM: 12px; // 중간 간격 (탭바 간격)
+$GAP-LARGE: 16px; // 큰 간격 (섹션 간격)
+
+// 폰트 크기
+$FONT-SMALL: 12px; // 작은 텍스트 (서브 텍스트)
+$FONT-DEFAULT: 14px; // 기본 텍스트 크기
+$FONT-MEDIUM: 16px; // 버튼, 탭 등에 사용
+$FONT-LARGE: 18px; // 제목, 중요한 텍스트
+
+// 반응형 크기 설정
+$MAX-WIDTH-MOBILE: 480px; // 모바일 최대 너비
+$MAX-WIDTH-TABLET: 768px; // 태블릿 최대 너비
