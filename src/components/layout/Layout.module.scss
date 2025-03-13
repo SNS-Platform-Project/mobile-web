@@ -4,13 +4,52 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   justify-content: space-between;
-  background-color: color.$color-lightBlue-000;
+  background-color: color.$color-white-000;
 }
 
 .content {
   flex-grow: 1;
-  padding: 20px;
+  padding: clamp(12px, 4vw, 20px);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include main.tablet {
+    padding: 16px;
+    font-size: 18px;
+  }
+
+  @include main.desktop {
+    padding: 18px;
+    font-size: 20px;
+  }
+}
+
+.header,
+.nav {
+  position: fixed; // 상단, 하단 고정 가능
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header {
+  top: 0;
+}
+
+.nav {
+  bottom: 0;
+}
+
+.content {
+  padding-bottom: 60px;
+
+  @include main.tablet {
+    padding-bottom: 70px;
+  }
+
+  @include main.desktop {
+    padding-bottom: 80px;
+  }
 }

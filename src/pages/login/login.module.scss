@@ -1,0 +1,135 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding-top: 50px;
+  flex-grow: 1;
+
+  @include main.tablet {
+    min-height: 300px;
+  }
+
+  @include main.desktop {
+    min-height: 500px;
+  }
+}
+
+.loginBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  width: 320px;
+
+  @include main.tablet {
+    width: 300px;
+    padding: 30px;
+  }
+
+  @include main.desktop {
+    width: 400px;
+    padding: 40px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+
+    @include main.tablet {
+      padding: 16px;
+      font-size: 18px;
+    }
+
+    @include main.desktop {
+      padding: 18px;
+      font-size: 20px;
+    }
+  }
+
+  &__logoinButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    @include main.tablet {
+      padding: 14px;
+      font-size: 18px;
+    }
+
+    @include main.desktop {
+      padding: 16px;
+      font-size: 20px;
+    }
+  }
+
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+  }
+
+  &__forgotPassword {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+
+    @include main.tablet {
+      font-size: 16px;
+    }
+
+    @include main.desktop {
+      font-size: 18px;
+    }
+  }
+}
+
+.signupBox {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  &__signupButton {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+
+    @include main.tablet {
+      font-size: 18px;
+    }
+
+    @include main.desktop {
+      font-size: 20px;
+    }
+  }
+}

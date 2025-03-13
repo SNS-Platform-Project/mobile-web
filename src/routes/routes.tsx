@@ -5,6 +5,7 @@ import SearchPage from "@pages/search";
 import WritePage from "@pages/write";
 import MessagePage from "@pages/message";
 import ProfilePage from "@pages/profile";
+import LoginPage from "@pages/login"
 
 // 레이아웃
 import Layout from "@/components/layout/Layout";
@@ -19,6 +20,7 @@ function AppRoutes() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/write" element={<WritePage />} />
           <Route path="/message" element={<MessagePage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Layout>
     </>
