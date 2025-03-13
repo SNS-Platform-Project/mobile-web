@@ -1,8 +1,13 @@
 import Header from "@/components/header/Header";
 
 import styles from "./login.module.scss";
+import Signup from "./components/Signup";
+import { useState } from "react";
 
 function Index() {
+  // [모달] 회원가입 상태
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
+
   return (
     <div className={styles.container}>
       <Header type="login" />
@@ -22,9 +27,17 @@ function Index() {
       </div>
 
       <div className={styles.signupBox}>
-        <p>계정이 없으신가요?</p>
-        <button className={styles.signupBox__signupButton}>가입하기</button>
+        <p>계정이 없으신가요 ?</p>
+        <button
+          className={styles.signupBox__signupButton}
+          onClick={() => setIsSignupOpen(true)}
+        >
+          가입하기
+        </button>
       </div>
+
+      {/* 회원가입 모달 (다이얼로그) */}
+      {isSignupOpen && <Signup onClose={() => setIsSignupOpen(false)} />}
     </div>
   );
 }
