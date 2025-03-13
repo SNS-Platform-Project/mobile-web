@@ -1,0 +1,78 @@
+// profile.module.scss
+.profileContainer {
+}
+
+/* 프로필 헤더 (프로필 이미지 + 정보) */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.profileImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  padding: 2px;
+  margin-right: 20px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.followContainer {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: gray;
+  margin-top: 5px;
+}
+
+.editButton {
+  margin-top: 8px;
+  background-color: #efefef;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.bio {
+  font-size: 14px;
+  color: gray;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+/* 게시물 그리드 스타일 (추후 추가 가능) */
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.postImage {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
