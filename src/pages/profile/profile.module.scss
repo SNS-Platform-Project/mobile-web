@@ -1,78 +1,160 @@
-// profile.module.scss
+/* 프로필 컨테이너 */
 .profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
-/* 프로필 헤더 (프로필 이미지 + 정보) */
+/* 프로필 상단 (프로필 이미지 + 유저 정보) */
 .profileHeader {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px;
-  padding: 10px;
+  max-width: 400px;
+  padding: 0.5rem;
+
+  @include main.tablet {
+    max-width: 500px;
+  }
+
+  @include main.desktop {
+    max-width: 600px;
+  }
 }
 
+/* 프로필 이미지 */
 .profileImage {
-  width: 90px;
-  height: 90px;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #ddd;
-  padding: 2px;
-  margin-right: 20px;
+  border: 0.1rem solid #ddd;
+  padding: 0.2rem;
+  margin-right: 1rem;
+
+  @include main.tablet {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  @include main.desktop {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
+/* 유저 정보 */
 .profileInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
+
+  &__username {
+    font-size: 1rem;
+
+    @include main.tablet {
+      font-size: 1.2rem;
+    }
+
+    @include main.desktop {
+      font-size: 1.4rem;
+    }
+  }
 }
 
-.username {
-  font-size: 18px;
-  font-weight: bold;
-}
-
+/* 팔로잉 & 팔로워 정렬 */
 .followContainer {
   display: flex;
-  gap: 15px;
-  font-size: 14px;
+  gap: 0.5rem;
+  font-size: 0.8rem;
   color: gray;
-  margin-top: 5px;
+  margin-top: 0.5rem;
+
+  @include main.tablet {
+    font-size: 1rem;
+  }
+
+  @include main.desktop {
+    font-size: 1.2rem;
+  }
 }
 
-.editButton {
-  margin-top: 8px;
-  background-color: #efefef;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.bio {
-  font-size: 14px;
-  color: gray;
-  text-align: left;
+/* 프로필 소개 & 링크 */
+.profileDetails {
   width: 100%;
-  max-width: 600px;
-  margin-top: 5px;
-  margin-left: 10px;
+  max-width: 400px;
+
+  padding: 0.5rem;
+
+  @include main.tablet {
+    max-width: 500px;
+  }
+
+  @include main.desktop {
+    max-width: 600px;
+  }
+
+  &__bio {
+    font-size: 0.7rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: blue;
+    cursor: pointer;
+    margin-top: 0.5rem;
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+  }
 }
 
-/* 게시물 그리드 스타일 (추후 추가 가능) */
-.postGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+/* 프로필 편집 & 공유 버튼 */
+.profileEdit {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
   width: 100%;
-  max-width: 600px;
-  margin-top: 20px;
-}
+  max-width: 90%;
 
-.postImage {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  @include main.tablet {
+    max-width: 80%;
+  }
+
+  @include main.desktop {
+    max-width: 70%;
+  }
+
+  &__editButton {
+    border: 0.1rem solid main.$color-lightBlue-500;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+
+    width: 17rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include main.tablet {
+      width: 12rem;
+      height: 3rem;
+      font-size: 1rem;
+    }
+
+    @include main.desktop {
+      width: 14rem;
+      height: 3.5rem;
+      font-size: 1.2rem;
+    }
+  }
 }
