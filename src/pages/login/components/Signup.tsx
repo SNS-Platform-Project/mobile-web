@@ -11,14 +11,18 @@ interface SignupProps {
 function Signup({ onClose }: SignupProps) {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false); // 약관 모달 상태
   const [isAgreed, setIsAgreed] = useState(false); // 체크박스 상태
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
+        {/* 닫기 버튼 (우측 상단 아이콘) */}
         <button className={styles.closeButton} onClick={onClose}>
           <IoClose />
         </button>
+
         <Header type="login" />
 
+        {/* 회원가입 안내 문구 */}
         <div>
           <h1>
             Stacks에서 자유롭게 이야기하고 소통하세요! <br />
@@ -26,14 +30,29 @@ function Signup({ onClose }: SignupProps) {
           </h1>
         </div>
 
-        <div>
+        {/* 🔹 회원가입 입력 폼 */}
+        <div className={styles.form}>
           <input placeholder="이름" className={styles.input} />
-          <input placeholder="이메일" className={styles.input} />
+
+          {/* 🔹 이메일 + 인증 코드 */}
+          <div className={styles.emailBox}>
+            <input placeholder="이메일" className={styles.input} />
+            <button className={styles.verifyButton}>인증</button>
+          </div>
+          <div className={styles.emailBox}>
+            <input
+              placeholder="이메일 인증 코드 입력"
+              className={styles.input}
+            />
+            <button className={styles.verifyButton}>확인</button>
+          </div>
+
           <input
             placeholder="비밀번호"
             type="password"
             className={styles.input}
           />
+
           {/* 🔹 개인정보 방침 & 약관 동의 */}
           <div className={styles.privacyBox}>
             <label htmlFor="agree" className={styles.notice}>
@@ -53,6 +72,7 @@ function Signup({ onClose }: SignupProps) {
           <button className={styles.signupButton}>가입</button>
         </div>
 
+        {/* 🔹 로그인 안내 */}
         <div className={styles.loginBox}>
           <p>계정이 있으신가요 ?</p>
           <button className={styles.loginBox__loginButton} onClick={onClose}>

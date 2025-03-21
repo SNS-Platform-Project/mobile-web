@@ -85,6 +85,32 @@ h1 {
   }
 }
 
+.emailBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+
+  .input {
+    flex: 1;
+  }
+
+  .verifyButton {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
 .privacyBox {
   display: flex;
   align-items: center;
