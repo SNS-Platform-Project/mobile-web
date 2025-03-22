@@ -18,7 +18,7 @@ import {
 const iconMap: Record<string, IconType> = {
   home: IoHomeOutline,
   search: IoSearchOutline,
-  write: IoAddOutline, // 글쓰기 아이콘
+  post: IoAddOutline, // 글쓰기 아이콘
   message: IoPaperPlaneOutline,
   profile: IoPersonOutline,
 };
