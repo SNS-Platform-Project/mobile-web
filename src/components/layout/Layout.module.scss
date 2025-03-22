@@ -1,12 +1,9 @@
-@use "@assets/styles/mixin.scss";
-@use "@assets/styles/color.scss";
-
 .container {
   display: flex;
   flex-direction: column;
   height: 100dvh;
   justify-content: space-between;
-  background-color: color.$color-white-000;
+  background-color: main.$color-white-000;
 }
 
 .content {

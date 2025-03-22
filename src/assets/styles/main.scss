@@ -14,16 +14,4 @@
 
   font-family: "Public Sans", sans-serif;
   font-weight: 00;
-
-  @include mixin.mobile {
-    background: color.$color-white-000;
-  }
-
-  @include mixin.tablet {
-    background: color.$color-white-000;
-  }
-
-  @include mixin.desktop {
-    background: color.$color-white-000;
-  }
 }
