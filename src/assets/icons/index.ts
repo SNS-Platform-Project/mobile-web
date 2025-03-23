@@ -13,6 +13,7 @@ import {
   IoImageOutline,
   IoHappyOutline,
   IoChevronBackOutline,
+  IoEllipsisHorizontalCircleOutline,
 } from "react-icons/io5";
 
 import { MdOutlineGif } from "react-icons/md";
@@ -44,4 +45,5 @@ export const CommonIcon = {
   close: IoClose,
   link: IoLinkOutline,
   back: IoChevronBackOutline,
+  more: IoEllipsisHorizontalCircleOutline,
 };
