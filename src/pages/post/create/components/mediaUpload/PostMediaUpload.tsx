@@ -3,6 +3,8 @@ import styles from "./PostMediaUpload.module.scss";
 import { MdOutlineGif } from "react-icons/md";
 import { IoImageOutline, IoHappyOutline } from "react-icons/io5";
 
+import { PostMediaIcons } from "@/assets/icons";
+
 interface PostMediaUploadProps {
   mediaFiles: File[];
   setMediaFiles: React.Dispatch<React.SetStateAction<File[]>>;
@@ -72,7 +74,7 @@ function PostMediaUpload({ mediaFiles, setMediaFiles }: PostMediaUploadProps) {
           className={styles.postMedia__upload__image}
           onClick={() => fileInputRef.current?.click()}
         >
-          <IoImageOutline size={26} />
+          <PostMediaIcons.image size={26} />
         </button>
         <input
           type="file"
@@ -83,10 +85,10 @@ function PostMediaUpload({ mediaFiles, setMediaFiles }: PostMediaUploadProps) {
           style={{ display: "none" }}
         />
         <button className={styles.postMedia__upload}>
-          <MdOutlineGif size={26} />
+          <PostMediaIcons.gif size={26} />
         </button>
         <button className={styles.postMedia__upload}>
-          <IoHappyOutline size={26} />
+          <PostMediaIcons.emoji size={26} />
         </button>
       </div>
     </div>

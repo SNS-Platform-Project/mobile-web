@@ -2,7 +2,8 @@ import { useState } from "react";
 import Header from "@/components/header/Header";
 
 import styles from "./Signup.module.scss";
-import { IoClose } from "react-icons/io5";
+
+import { Common } from "@/assets/icons";
 
 interface SignupProps {
   onClose: () => void;
@@ -17,7 +18,7 @@ function Signup({ onClose }: SignupProps) {
       <div className={styles.modal}>
         {/* 닫기 버튼 (우측 상단 아이콘) */}
         <button className={styles.closeButton} onClick={onClose}>
-          <IoClose />
+          <Common.close />
         </button>
 
         <Header type="login" />
