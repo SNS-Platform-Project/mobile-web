@@ -78,6 +78,16 @@ function PostTextarea() {
     const newText = updatedBefore + after;
 
     setText(newText);
+
+    setContent(newText); // ✅ 상태 즉시 반영!
+
+    // ✅ 해시태그 & 멘션 추출 다시 수행
+    const extractedTags = newText.match(/#([ㄱ-ㅎ가-힣a-zA-Z0-9_]+)/g) || [];
+    const extractedMentions =
+      newText.match(/@([ㄱ-ㅎ가-힣a-zA-Z0-9_]+)/g) || [];
+    setHashtags(extractedTags.map((tag) => tag.slice(1)));
+    setMentions(extractedMentions.map((m) => m.slice(1)));
+
     setShowDropdown(false);
 
     // 커서 위치를 새로 이동시키기

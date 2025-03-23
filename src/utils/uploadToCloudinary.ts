@@ -17,5 +17,12 @@ export const uploadToCloudinary = async (file: File) => {
   );
 
   const data = await res.json();
-  return data.secure_url; // ✅ 서버에 전달할 src!
+
+  // ✅ 업로드 성공 로그
+  console.log("📦 클라우디너리 업로드 성공!", {
+    fileName: file.name,
+    url: data.secure_url,
+  });
+
+  return data.secure_url; // ✅ 서버에 전달할 URL 반환 !!
 };

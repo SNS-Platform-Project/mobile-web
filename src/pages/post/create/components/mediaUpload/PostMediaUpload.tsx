@@ -3,11 +3,14 @@ import styles from "./PostMediaUpload.module.scss";
 import { MdOutlineGif } from "react-icons/md";
 import { IoImageOutline, IoHappyOutline } from "react-icons/io5";
 
-function PostMediaUpload() {
+interface PostMediaUploadProps {
+  mediaFiles: File[];
+  setMediaFiles: React.Dispatch<React.SetStateAction<File[]>>;
+}
+
+function PostMediaUpload({ mediaFiles, setMediaFiles }: PostMediaUploadProps) {
   // 파일 업로드 input ref
   const fileInputRef = useRef<HTMLInputElement>(null);
-  // 업로드할 미디어 파일 목록
-  const [mediaFiles, setMediaFiles] = useState<File[]>([]);
   // 미리보기 URL 목록
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
   // 최대 업로드 가능한 파일 수
