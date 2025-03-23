@@ -12,6 +12,7 @@ import {
   IoLinkOutline,
   IoImageOutline,
   IoHappyOutline,
+  IoChevronBackOutline,
 } from "react-icons/io5";
 
 import { MdOutlineGif } from "react-icons/md";
@@ -39,7 +40,8 @@ export const PostMediaIcons = {
   emoji: IoHappyOutline,
 };
 
-export const Common = {
+export const CommonIcon = {
   close: IoClose,
   link: IoLinkOutline,
+  back: IoChevronBackOutline,
 };

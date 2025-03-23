@@ -3,7 +3,7 @@ import TabNavBar from "@/components/tabNavBar/TabNavBar";
 
 import styles from "./profile.module.scss";
 
-import { Common } from "@/assets/icons";
+import { CommonIcon } from "@/assets/icons";
 
 function index() {
   return (
@@ -36,7 +36,7 @@ function index() {
         <div className={styles.profileDetails}>
           <p className={styles.profileDetails__bio}>안녕하세요</p>
           <div className={styles.profileDetails__link}>
-            <Common.link className={styles.linkIcon} />
+            <CommonIcon.link className={styles.linkIcon} />
             <a
               href="https://youtu.be/_51U548cEQg?si=8Y2R-BvQb9oZfie0"
               target="_blank"
