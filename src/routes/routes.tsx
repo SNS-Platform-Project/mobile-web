@@ -1,10 +1,11 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // 페이지
 import HomePage from "@pages/home";
 import SearchPage from "@pages/search";
 
 // 게시글
 import CreatePostPage from "@pages/post/create";
+import QuotePostPage from "@pages/post/quote";
 
 import MessagePage from "@pages/message";
 import ProfilePage from "@pages/profile";
@@ -23,6 +24,7 @@ function AppRoutes() {
           <Route path="/profile" element={<ProfilePage />} />
 
           <Route path="/post/create" element={<CreatePostPage />} />
+          <Route path="/post/quote/:id" element={<QuotePostPage />} />
 
           <Route path="/message" element={<MessagePage />} />
           <Route path="/login" element={<LoginPage />} />
