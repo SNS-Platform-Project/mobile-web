@@ -1,3 +1,4 @@
+import PostFooter from "./components/footer/PostFooter";
 import PostHeader from "./components/header/PostHeader";
 import PostMediaUpload from "./components/mediaUpload/PostMediaUpload";
 import PostTextarea from "./components/textarea/PostTextarea";
@@ -10,6 +11,7 @@ function index() {
       <PostHeader />
       <PostTextarea />
       <PostMediaUpload />
+      <PostFooter />
     </div>
   );
 }
