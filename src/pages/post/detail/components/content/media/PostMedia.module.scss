@@ -1,0 +1,31 @@
+.postMedia {
+  width: 100%;
+  position: relative;
+  padding: 12px 0; // 상하 여백 약간
+
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    width: 85%; // 👈 한 슬라이드가 전체의 85% 너비만 차지!
+    display: flex;
+    justify-content: center;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 16px;
+    user-select: none;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5);
+    &-active {
+      background-color: white;
+    }
+  }
+}

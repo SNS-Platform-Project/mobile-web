@@ -1,5 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
+import "swiper/css/pagination";
+
 import styles from "./PostMedia.module.scss";
 
 interface PostMediaProps {
@@ -12,8 +15,9 @@ function PostMedia({ images }: PostMediaProps) {
   return (
     <div className={styles.postMedia}>
       <Swiper
-        spaceBetween={10}
-        slidesPerView={1}
+        spaceBetween={12}
+        slidesPerView={"auto"}
+        centeredSlides={true}
         pagination={{ clickable: true }}
       >
         {images.map((img, idx) => (

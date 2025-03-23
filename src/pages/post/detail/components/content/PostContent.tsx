@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
-import PostMedia from "../media/PostMedia";
+import PostMedia from "./media/PostMedia";
 
 import styles from "./PostContent.module.scss";
 
