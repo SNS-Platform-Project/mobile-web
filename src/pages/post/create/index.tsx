@@ -1,5 +1,6 @@
-import PostHeader from "./components/PostHeader";
-import PostTextarea from "./components/PostTextarea";
+import PostHeader from "./components/header/PostHeader";
+import PostMediaUpload from "./components/mediaUpload/PostMediaUpload";
+import PostTextarea from "./components/textarea/PostTextarea";
 
 import styles from "./index.module.scss";
 
@@ -8,6 +9,7 @@ function index() {
     <div className={styles.postCreate}>
       <PostHeader />
       <PostTextarea />
+      <PostMediaUpload />
     </div>
   );
 }
