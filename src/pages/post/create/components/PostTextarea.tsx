@@ -80,7 +80,7 @@ function PostTextarea() {
       <textarea
         ref={textareaRef}
         className={styles.postTextarea__textarea}
-        placeholder="생각을 적어보세요 . . ."
+        placeholder="생각을 적어보세요 . . 💬"
         value={text}
         onChange={handleChange}
       />
