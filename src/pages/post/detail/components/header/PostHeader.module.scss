@@ -1,0 +1,15 @@
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  &__button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
