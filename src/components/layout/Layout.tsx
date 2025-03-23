@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, matchPath } from "react-router-dom";
 import NavBar from "../navBar/NavBar";
 
 import styles from "./Layout.module.scss";
@@ -12,8 +12,10 @@ function Layout({ children }: LayoutProps) {
   const location = useLocation();
 
   // 네비게이션이 표시될 경로 목록
-  const showNavbarPaths = ["/", "/search", "/profile"];
-  const showNavbar = showNavbarPaths.includes(location.pathname);
+  const showNavbarPaths = ["/", "/search", "/profile", "/post/:id"];
+  const showNavbar = showNavbarPaths.some((path) =>
+    matchPath(path, location.pathname)
+  );
 
   return (
     <div className={styles.container}>
