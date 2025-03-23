@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
+import PostMedia from "../media/PostMedia";
 
 import styles from "./PostContent.module.scss";
 
@@ -20,7 +21,11 @@ const mockPost = {
   content: "안녕하세요 @han #프론트엔드 #리액트 개발자입니다!",
   hashtags: ["프론트엔드", "리액트"],
   mentions: ["han"],
-  images: ["~"],
+  images: [
+    "https://ui-avatars.com/api/?name=한&background=random&rounded=true",
+    "https://ui-avatars.com/api/?name=주&background=random&rounded=true",
+    "https://ui-avatars.com/api/?name=영&background=random&rounded=true",
+  ],
 };
 
 function PostContent() {
@@ -58,6 +63,8 @@ function PostContent() {
         </div>
       </div>
       <div className={styles.text}>{parsedContent}</div>
+
+      <PostMedia images={mockPost.images} />
     </div>
   );
 }
