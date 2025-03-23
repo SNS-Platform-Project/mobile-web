@@ -1,4 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+
+import { usePostStore } from "@/store/post/postStore";
+
 import styles from "./PostTextarea.module.scss";
 
 // 목 데이터 (실제론 서버에서 받아오면 됨)
@@ -6,13 +9,17 @@ const users = ["한주영", "박민영", "박예진"];
 const tags = ["취미", "고양이", "운동"];
 
 function PostTextarea() {
-  // 입력 텍스트 상태
   const [text, setText] = useState("");
-  // 자동완성 드롭다운 관련 상태
+
   const [showDropdown, setShowDropdown] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  // textarea DOM 직접 접근하기 위한 ref
+
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // ✅ zustand setter 불러오기
+  const setContent = usePostStore((state) => state.setContent);
+  const setHashtags = usePostStore((state) => state.setHashtags);
+  const setMentions = usePostStore((state) => state.setMentions);
 
   // textarea 자동 높이 조절 함수
   const autoResize = () => {
@@ -28,6 +35,18 @@ function PostTextarea() {
     const value = e.target.value;
     setText(value);
     autoResize(); // 입력할 때마다 높이 자동조절
+
+    // ✅ 상태 저장
+    setContent(value); // 전체 텍스트 저장
+
+    // ✅ 해시태그 & 멘션 추출 (정규식)
+    const extractedTags = value.match(/#([ㄱ-ㅎ가-힣a-zA-Z0-9_]+)/g) || [];
+    const extractedMentions = value.match(/@([ㄱ-ㅎ가-힣a-zA-Z0-9_]+)/g) || [];
+
+    // ✅ 해시태그 & 멘션 저장
+    setHashtags(extractedTags.map((tag) => tag.slice(1)));
+    setMentions(extractedMentions.map((m) => m.slice(1)));
+
     // 마지막 단어가 @ 또는 #로 시작하는지 확인
     const match = value.match(/([@#])(\w*)$/);
     if (match) {
@@ -61,7 +80,7 @@ function PostTextarea() {
     setText(newText);
     setShowDropdown(false);
 
-    // ✅ 커서 위치를 새로 이동시키기
+    // 커서 위치를 새로 이동시키기
     setTimeout(() => {
       const newCursorPos = updatedBefore.length;
       textarea.focus();
