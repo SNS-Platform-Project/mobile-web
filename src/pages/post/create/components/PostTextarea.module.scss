@@ -1,0 +1,39 @@
+.postTextarea {
+  padding: 1rem;
+  position: relative;
+
+  &__textarea {
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    resize: none; // ✅ 사용자가 수동으로 크기 조절 못하게
+    overflow: hidden; // ✅ 스크롤 안 생기게!
+    box-sizing: border-box;
+  }
+
+  .dropdown {
+    position: absolute;
+    left: 1rem;
+    width: 50%;
+    margin-top: 4px;
+    padding: 0;
+    list-style: none;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    z-index: 10;
+
+    overflow-y: auto;
+    li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
+}
