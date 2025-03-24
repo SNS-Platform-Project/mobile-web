@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding-top: 50px;
+  flex-grow: 1;
+
+  @include main.tablet {
+    min-height: 300px;
+  }
+
+  @include main.desktop {
+    min-height: 500px;
+  }
+}
+
+.signupBox {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+
+  &__signupButton {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+
+    @include main.tablet {
+      font-size: 18px;
+    }
+
+    @include main.desktop {
+      font-size: 20px;
+    }
+  }
+}
