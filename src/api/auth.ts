@@ -16,3 +16,9 @@ export const loginAPI = async (data: LoginRequest): Promise<LoginResponse> => {
   const res = await axiosInstance.post("/api/v1/auth/login", data);
   return res.data;
 };
+
+// 로그아웃
+export const logoutAPI = async () => {
+  const res = await axiosInstance.post("/api/v1/auth/logout");
+  return res.data;
+};

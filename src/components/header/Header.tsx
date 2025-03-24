@@ -1,3 +1,6 @@
+import AlarmButton from "./components/alarm/AlarmButton";
+import ProfileMenuButton from "./components/menu/ProfileMenuButton";
+
 import styles from "./Header.module.scss";
 
 import { HeaderIcons } from "@/assets/icons";
@@ -15,12 +18,11 @@ function Header({ type }: HeaderProps) {
       </div>
 
       {/* 오른쪽 아이콘 */}
-      <button className={styles.rightIcon}>
-        {type === "home" && <HeaderIcons.like size={24} />}{" "}
-        {/* 알람 개수 배지 (홈 화면일 때만 표시) */}
-        {type === "home" && <span className={styles.badge}>3</span>}
-        {type === "profile" && <HeaderIcons.menu size={24} />}
-      </button>
+
+      <div className={styles.rightWrapper}>
+        {type === "home" && <AlarmButton />}
+        {type === "profile" && <ProfileMenuButton />}
+      </div>
     </header>
   );
 }
