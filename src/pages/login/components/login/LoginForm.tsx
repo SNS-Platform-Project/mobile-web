@@ -23,7 +23,7 @@ function LoginForm() {
     try {
       const res = await loginAPI({ usernameOrEmail, password });
 
-      console.log("✅ 로그인 성공:", res);
+      // console.log("✅ 로그인 성공:", res);
 
       const { accessToken, refreshToken } = res;
 

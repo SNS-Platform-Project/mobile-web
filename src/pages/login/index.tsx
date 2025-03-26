@@ -3,7 +3,7 @@ import { useState } from "react";
 // 컴포넌트
 import Header from "@/components/header/Header";
 import LoginForm from "./components/login/LoginForm";
-import Signup from "./components/Signup";
+import Signup from "./components/signup";
 
 import styles from "./index.module.scss";
 
