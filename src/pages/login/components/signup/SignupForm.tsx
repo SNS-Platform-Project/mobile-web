@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 // API
-import { emailVerifiactionAPI, verifyEmailCodeAPI } from "@/api/auth";
+import {
+  emailVerifiactionAPI,
+  verifyEmailCodeAPI,
+  emailCheckAPI,
+} from "@/api/auth";
 import { userNameCheckAPI } from "@/api/user";
 
 import {
@@ -72,10 +76,16 @@ function SignupForm({
       setEmailError("");
     }
   };
-  // 이메일 인증 요청
+  // 이메일 인증 중복, 요청
   const handleRequestEmail = async () => {
     console.log("코드 전송");
     try {
+      const res = await emailCheckAPI(email);
+      console.log(res);
+      if (res === false) {
+        alert("이미 등록되어 있는 이메일입니다.");
+        return;
+      }
       await emailVerifiactionAPI({ email });
       alert("이메일로 인증코드를 전송했어요. 10분 안에 입력해주세요 !");
     } catch (err: any) {
