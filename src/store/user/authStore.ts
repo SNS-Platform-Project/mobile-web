@@ -42,7 +42,7 @@ const useAuthStore = create<AuthState>()(
         }),
     }),
     {
-      name: "auth-storage",
+      name: "auth-storage", // 로컬 스토리지에 저장되는 키
     }
   )
 );

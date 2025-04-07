@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import useAuthStore from "@/store/user/authStore";
 
@@ -13,11 +14,14 @@ function ProfileMenuButton() {
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
       await logoutAPI();
       clearUser();
       alert("로그아웃 되었습니다!");
+      navigate("/login");
     } catch (err) {
       console.error(err);
       alert("로그아웃 중 문제가 발생했습니다.");
