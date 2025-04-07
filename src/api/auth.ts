@@ -23,15 +23,21 @@ export const logoutAPI = async () => {
   return res.data;
 };
 
-// 이메일 중복 확인
+// 유저 네임 중복 검사
+export const usernameCheckAPI = async (username: string): Promise<boolean> => {
+  const res = await axiosInstance.get(`/api/v1/users/check-username`, {
+    params: { username },
+  });
+  return res.data; // 서버 응답이 true 또는 false (중복 X / O)
+};
+// 이메일 중복 검사
 export const emailCheckAPI = async (email: string): Promise<boolean> => {
   const res = await axiosInstance.get(`/api/v1/users/check-email`, {
     params: { email },
   });
   return res.data; // 서버 응답이 true 또는 false (중복 X / O)
 };
-
-// 이메일 인증
+// 이메일 인증 요청
 interface EmailVerifiactionRequest {
   email: string;
 }
