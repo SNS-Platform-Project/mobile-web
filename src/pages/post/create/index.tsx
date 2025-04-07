@@ -1,23 +1,16 @@
-import { useState } from "react";
-
-import PostFooter from "@pages/post/components/footer/PostFooter";
-import PostHeader from "@pages/post/components/header/PostHeader";
-import PostMediaUpload from "@pages/post/components/mediaUpload/PostMediaUpload";
-import PostTextarea from "@pages/post/components/textarea/PostTextarea";
-
-import styles from "./index.module.scss";
+import { useEffect } from "react";
+import { usePostStore } from "@/store/post/postStore";
+import PostCreate from "./PostCreate";
 
 function Index() {
-  const [mediaFiles, setMediaFiles] = useState<File[]>([]);
+  const { setType, resetPost } = usePostStore();
 
-  return (
-    <div className={styles.postCreate}>
-      <PostHeader />
-      <PostTextarea />
-      <PostMediaUpload mediaFiles={mediaFiles} setMediaFiles={setMediaFiles} />
-      <PostFooter mediaFiles={mediaFiles} />
-    </div>
-  );
+  useEffect(() => {
+    setType("regular");
+    return () => resetPost();
+  }, []);
+
+  return <PostCreate />;
 }
 
 export default Index;

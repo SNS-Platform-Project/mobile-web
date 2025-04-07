@@ -10,5 +10,6 @@ interface PostReaularRequest {
 
 export const postRegularAPI = async (data: PostReaularRequest) => {
   const res = await axiosInstance.post("/api/v1/posts/regular", data);
+  console.log("반환하는것", res.data);
   return res.data;
 };
