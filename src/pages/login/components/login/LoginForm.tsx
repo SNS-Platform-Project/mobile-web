@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // API
 import { loginAPI } from "@/api/auth";
@@ -16,15 +17,14 @@ function LoginForm() {
   // [유저] 전역 상태 설정 함수
   const { setUser } = useAuthStore();
 
-  // 로그인 이벤트
-  const handleLogin = async () => {
-    console.log("🟡 handleLogin 함수 실행됨!");
+  const navigate = useNavigate();
 
+  // 로그인 버튼 클릭 시
+  const handleLogin = async () => {
     try {
       const res = await loginAPI({ usernameOrEmail, password });
 
-      // console.log("✅ 로그인 성공:", res);
-
+      console.log("✅ 로그인 성공:", res);
       const { accessToken, refreshToken } = res;
 
       setUser({
@@ -35,7 +35,8 @@ function LoginForm() {
       });
 
       alert("로그인 성공!");
-      // TODO: 로그인 성공 후 페이지 이동
+
+      navigate("/");
     } catch (error: any) {
       console.error("❌ 로그인 실패:", error.response?.data || error.message);
       alert("로그인에 실패했습니다.");
