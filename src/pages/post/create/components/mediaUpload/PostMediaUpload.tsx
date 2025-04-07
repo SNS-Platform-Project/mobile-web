@@ -1,7 +1,5 @@
 import { useRef, useState } from "react";
 import styles from "./PostMediaUpload.module.scss";
-import { MdOutlineGif } from "react-icons/md";
-import { IoImageOutline, IoHappyOutline } from "react-icons/io5";
 
 import { PostMediaIcons } from "@/assets/icons";
 

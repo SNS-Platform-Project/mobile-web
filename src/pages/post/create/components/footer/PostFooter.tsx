@@ -2,6 +2,7 @@ import { uploadToCloudinary } from "@/utils/uploadToCloudinary";
 import { usePostStore } from "@/store/post/postStore";
 
 import styles from "./PostFooter.module.scss";
+import { postRegularAPI } from "@/api/post";
 
 interface PostFooterProps {
   mediaFiles: File[];
@@ -22,11 +23,6 @@ function PostFooter({ mediaFiles }: PostFooterProps) {
   } = usePostStore();
 
   const handleSubmit = async () => {
-    if (!content.trim()) {
-      alert("내용을 입력해주세요.");
-      return;
-    }
-
     try {
       let uploadedUrls: string[] = [];
 
@@ -49,22 +45,10 @@ function PostFooter({ mediaFiles }: PostFooterProps) {
 
       console.log(postData);
 
-      // // ✅ 4. 요청 URL 설정
-      // const url =
-      //   type === "quote"
-      //     ? `/api/v1/posts/${quotePostId}/quote`
-      //     : `/api/v1/posts/regular`;
+      // ✅ 4. 서버로 전송
+      await postRegularAPI(postData);
 
-      // // ✅ 5. 서버로 전송
-      // const res = await fetch(url, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(postData),
-      // });
-
-      // if (!res.ok) throw new Error("업로드 실패");
-
-      // // ✅ 6. 성공 처리
+      // // ✅ 5. 성공 처리
       alert("게시물이 등록되었습니다!");
       resetPost(); // 상태 초기화
     } catch (err) {
@@ -75,9 +59,11 @@ function PostFooter({ mediaFiles }: PostFooterProps) {
 
   return (
     <div className={styles.postFooter}>
-      <button className={styles.postFooter__submit} onClick={handleSubmit}>
-        게시
-      </button>
+      {(content.trim() || mediaFiles.length > 0) && (
+        <button className={styles.postFooter__submit} onClick={handleSubmit}>
+          게시
+        </button>
+      )}
     </div>
   );
 }
