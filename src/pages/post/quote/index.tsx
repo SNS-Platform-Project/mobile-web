@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 
 import { usePostStore } from "@/store/post/postStore";
 
-import PostFooter from "../create/components/footer/PostFooter";
-import PostHeader from "../create/components/header/PostHeader";
-import PostMediaUpload from "../create/components/mediaUpload/PostMediaUpload";
-import PostTextarea from "../create/components/textarea/PostTextarea";
+import PostFooter from "@pages/post/components/footer/PostFooter";
+import PostHeader from "@pages/post/components/header/PostHeader";
+import PostMediaUpload from "@pages/post/components/mediaUpload/PostMediaUpload";
+import PostTextarea from "@pages/post/components/textarea/PostTextarea";
 
 import styles from "../create/index.module.scss";
 
