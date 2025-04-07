@@ -59,6 +59,6 @@ export interface SignUpRequest {
   password: string;
 }
 // 회원가입
-export const sginUpAPI = async (data: SignUpRequest) => {
+export const signUpAPI = async (data: SignUpRequest) => {
   return await axiosInstance.post("/api/v1/auth/register", data);
 };

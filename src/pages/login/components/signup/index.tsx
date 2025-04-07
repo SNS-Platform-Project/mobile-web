@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "@/components/header/Header";
 import SignupForm from "./SignupForm";
 
-import { sginUpAPI } from "@/api/auth";
+import { signUpAPI } from "@/api/auth";
 
 import styles from "./index.module.scss";
 
@@ -28,7 +28,7 @@ function Index({ onClose }: SignupProps) {
     }
 
     try {
-      await sginUpAPI(username, email, password);
+      await signUpAPI(username, email, password);
       console.log(username, email, password);
       alert("가입 완료!");
       onClose();
