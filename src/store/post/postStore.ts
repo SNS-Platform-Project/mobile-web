@@ -1,5 +1,10 @@
 import { create } from "zustand";
 
+interface PostImage {
+  url: string;
+  public_id: string;
+}
+
 // 일반게시물 | 인용게시물
 type PostType = "regular" | "quote";
 
@@ -8,7 +13,7 @@ interface PostStoreState {
   content: string;
   hashtags: string[];
   mentions: string[];
-  images: string[];
+  images: PostImage[];
   quotePostId?: string;
 
   // setter
@@ -16,7 +21,7 @@ interface PostStoreState {
   setContent: (value: string) => void;
   setHashtags: (tags: string[]) => void;
   setMentions: (users: string[]) => void;
-  setImages: (urls: string[]) => void;
+  setImages: (images: PostImage[]) => void;
   setQuotePostId: (id: string) => void;
 
   // 초기화
@@ -35,7 +40,7 @@ export const usePostStore = create<PostStoreState>((set) => ({
   setContent: (value) => set({ content: value }),
   setHashtags: (tags) => set({ hashtags: tags }),
   setMentions: (users) => set({ mentions: users }),
-  setImages: (urls) => set({ images: urls }),
+  setImages: (images) => set({ images }),
   setQuotePostId: (id) => set({ quotePostId: id }),
 
   resetPost: () =>

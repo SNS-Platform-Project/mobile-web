@@ -29,7 +29,10 @@ export const uploadToCloudinary = async (file: File) => {
     delete_token: data.delete_token,
   });
 
-  return data.secure_url;
+  return {
+    url: data.secure_url,
+    public_id: data.public_id,
+  };
 };
 
 // 삭제

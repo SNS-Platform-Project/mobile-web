@@ -12,27 +12,19 @@ function PostFooter({ mediaFiles }: PostFooterProps) {
   // TODO: 모바일 키보드 해야한다.
 
   // ✅ store setter 불러오기
-  const {
-    content,
-    hashtags,
-    mentions,
-    type,
-    quotePostId,
-    resetPost,
-    setImages,
-  } = usePostStore();
+  const { content, hashtags, mentions, resetPost, setImages } = usePostStore();
 
   const handleSubmit = async () => {
     try {
-      let uploadedUrls: string[] = [];
+      let uploadedImages = [];
 
       // ✅ 1. Cloudinary에 파일 업로드
       if (mediaFiles.length > 0) {
-        uploadedUrls = await Promise.all(
+        uploadedImages = await Promise.all(
           mediaFiles.map((file) => uploadToCloudinary(file))
         );
         // ✅ 2. store에 이미지 URL 저장
-        setImages(uploadedUrls);
+        setImages(uploadedImages);
       }
 
       // ✅ 3. 요청 body 구성
@@ -40,7 +32,7 @@ function PostFooter({ mediaFiles }: PostFooterProps) {
         content,
         ...(hashtags.length && { hashtags }),
         ...(mentions.length && { mentions }),
-        ...(uploadedUrls.length && { images: uploadedUrls }),
+        ...(uploadedImages.length && { images: uploadedImages }),
       };
 
       console.log(postData);
